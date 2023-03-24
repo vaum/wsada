@@ -35,10 +35,14 @@ app.post('/api/user/create', jsonParser, async (req, res) => {
         "reqDump" : JSON.stringify(user)
     })
 
-    // await dbClient.connect(err => {
-    //     const userCollection = dbClient.db(DB_NAME).collection("users")
-    //     dbClient.close()
-    // })
+    /**
+     *  Db connection in case we need it for future
+
+        await dbClient.connect(err => {
+            const userCollection = dbClient.db(DB_NAME).collection("users")
+            dbClient.close()
+        })
+     */
 
     let data = JSON.stringify({
         "collection": "users",
@@ -74,6 +78,10 @@ app.post('/api/user/create', jsonParser, async (req, res) => {
         .catch(function (error) {
             console.log(error);
         });
+})
+
+app.get('/api/user/login', jsonParser, async (req, res) => {
+
 })
 
 app.get('/', (req,res) => { console.log(' / is called') })

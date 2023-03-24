@@ -47,7 +47,7 @@ export default {
 
 
     const submit = handleSubmit(values => {
-      alert(JSON.stringify(values, null, 2))
+      login(JSON.stringify(values, null, 2))
     })
 
     return {email, password, submit}
